@@ -26,8 +26,13 @@ export interface NewContact {
  */
 @Injectable()
 export class ContactService {
-  // NOTE: Replace <backend_url> with the actual deployed backend API URL.
-  private apiUrl = '<backend_url>/contacts';
+  /**
+   * The backend API base URL.
+   * For local development: adjust the port below if your Flask backend uses a different port.
+   * Backend is served at http://localhost:3001 per container config.
+   * For production, update as needed (consider environment variables).
+   */
+  private apiUrl = 'http://localhost:3001/contacts';
 
   constructor(
     // eslint-disable-next-line no-unused-vars
